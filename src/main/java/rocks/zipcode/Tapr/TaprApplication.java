@@ -18,9 +18,8 @@ public class TaprApplication {
 	@Bean
 	public CommandLineRunner demo(UserRepository repository) {
 		return (args) -> {
-			repository.save(new User(01, "KDot234", "kris@zcw.com", "Kris", "Younger", "K.2345", 302-766-3333, user.getDevicesOnProfile("RYSE - SmartShade - White" + "Govee - A19 Smart LED Bulb" + "Samsung - 85” Class DU7200")));
-		}
-
+			//repository.save(new User(01, "KDot234", "kris@zcw.com", "Kris", "Younger", "K.2345", 302-766-3333, user.getDevicesOnProfile("RYSE - SmartShade - White" + "Govee - A19 Smart LED Bulb" + "Samsung - 85” Class DU7200")));
+		};
 	}
 
 }
