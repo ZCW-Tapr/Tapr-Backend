@@ -15,11 +15,11 @@ public class UserTest  {
     }
 
     @Test
-    public void testTestGetName() {
+    public void testTestGetUserName() {
         //given
-        String name = "John Doe";
-        user.setName(name);
-        assertEquals(name, user.getName());
+        String name = "JohnD1234";
+        user.setUserName(name);
+        assertEquals(name, user.getUserName());
     }
 
     @Test
@@ -27,6 +27,20 @@ public class UserTest  {
         String email = "john.Doe@gmail.com";
         user.setEmail(email);
         assertEquals(email, user.getEmail());
+    }
+
+    @Test
+    public void testFirstName() {
+        String firstName = "John";
+        user.setFirstName(firstName);
+        assertEquals(firstName, user.getFirstName());
+    }
+
+    @Test
+    public void testLastName() {
+        String lastName = "Doe";
+        user.setLastName(lastName);
+        assertEquals(lastName, user.getLastName());
     }
 
     @Test
@@ -39,8 +53,8 @@ public class UserTest  {
     @Test
     public void testGetPhone() {
         int phone = 302-774-7890;
-        user.setPhone(phone);
-        assertEquals(phone, user.getPhone());
+        user.setPhoneNumber(phone);
+        assertEquals(phone, user.getPhoneNumber());
     }
 
     @Test
