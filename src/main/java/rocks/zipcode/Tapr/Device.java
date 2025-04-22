@@ -2,13 +2,13 @@ package rocks.zipcode.Tapr;
 
 public class Device {
     private int ID;
-    private String categoryID;
+    private int categoryID;
     private String categoryName;
 
 
 
 
-    public Device(int ID, String categoryID, String categoryName) {
+    public Device(int ID, int categoryID, String categoryName) {
         this.ID = ID;
         this.categoryID = categoryID;
         this.categoryName = categoryName;
@@ -26,11 +26,11 @@ public class Device {
     public void setID(int ID) {
         this.ID = ID;
     }
-    public String getCategoryID() {
+    public int getCategoryID() {
         return categoryID;
     }
 
-    public void setCategoryID(String categoryID) {
+    public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
 
