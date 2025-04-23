@@ -1,5 +1,7 @@
-package rocks.zipcode.Tapr;
-import org.testng.annotations.Test;
+package rocks.zipcode.Tapr.UserTests;
+import org.junit.jupiter.api.Test;
+
+import rocks.zipcode.Tapr.User.User;
 
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -55,12 +57,5 @@ public class UserTest  {
         int phone = 302-774-7890;
         user.setPhoneNumber(phone);
         assertEquals(phone, user.getPhoneNumber());
-    }
-
-    @Test
-    public void testGetDevicesOnProfile() {
-        String[] devicesOnProfile = {"LIFX Bulb", "Google Nest", "Garage Door Opener", "LIFX Smart Strip"};
-        user.setDevicesOnProfile((devicesOnProfile));
-        assertEquals((devicesOnProfile), user.getDevicesOnProfile());
     }
 }

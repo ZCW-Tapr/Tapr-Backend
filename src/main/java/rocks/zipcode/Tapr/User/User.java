@@ -1,9 +1,10 @@
-package rocks.zipcode.Tapr;
+package rocks.zipcode.Tapr.User;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import rocks.zipcode.Tapr.Devices.Device;
 
 import java.util.ArrayList;
 
@@ -18,13 +19,13 @@ public class User {
     private String lastName;
     private String email;
     private String password;
-    private long phoneNumber;
-    private ArrayList<Device> devicesOnProfile = new ArrayList<>();
+    private int phoneNumber;
 
     public User() {
         // Default constructor
     }
-    public User(int ID, String userName, String email, String firstName, String lastName, String password, int phoneNumber, ArrayList<Device> devicesOnProfile) {
+
+    public User(int ID, String userName, String email, String firstName, String lastName, String password, int phoneNumber) {
         this.ID = ID;
         this.userName = userName;
         this.firstName = firstName;
@@ -32,14 +33,13 @@ public class User {
         this.email = email;
         this.password = password;
         this.phoneNumber = phoneNumber;
-        this.devicesOnProfile = new ArrayList<>(){};
     }
 
     @Override
     public String toString() {
         return String.format(
                 "User [ID=%d, User Name=%s, E-mail=%s, First Name=%s, Last Name=%s, Password=%s, Phone=%d, Devices On Profile=%s]",
-                ID, userName, email, firstName, lastName, password, phoneNumber, devicesOnProfile.add(new Device()));
+                ID, userName, email, firstName, lastName, password, phoneNumber);
     }
 
     public int getID() {
@@ -96,13 +96,5 @@ public class User {
 
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public ArrayList<Device> getDevicesOnProfile() {
-        return devicesOnProfile;
-    }
-
-    public void setDevicesOnProfile(String[] devicesOnProfile) {
-        this.devicesOnProfile = new ArrayList<>();
     }
 }
