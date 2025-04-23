@@ -6,9 +6,9 @@ public class Smart_Speakers extends Device {
     private String model;
     private String color;
     private String modelNumber;
-    private String categoryID;
+    private int categoryID;
     private String categoryName;
-    private long UPC = Long.MAX_VALUE;
+    private String UPC;
     private int manufacturerYear;
 
     @Override
@@ -54,12 +54,12 @@ public class Smart_Speakers extends Device {
     }
 
     @Override
-    public String getCategoryID() {
+    public int getCategoryID() {
         return categoryID;
     }
 
     @Override
-    public void setCategoryID(String categoryID) {
+    public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
 
@@ -73,11 +73,11 @@ public class Smart_Speakers extends Device {
         this.categoryName = categoryName;
     }
 
-    public long getUPC() {
+    public String getUPC() {
         return UPC;
     }
 
-    public void setUPC(long UPC) {
+    public void setUPC(String UPC) {
         this.UPC = UPC;
     }
 

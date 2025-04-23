@@ -4,6 +4,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class DeviceTest {
     Device device = new Device();
+
     @Test
     public void getID() {
         //given
@@ -15,7 +16,7 @@ public class DeviceTest {
     @Test
     public void getCategoryID() {
         //given
-        String categoryID = "TV25";
+        int categoryID = 3;
         device.setCategoryID(categoryID);
         assertEquals(categoryID, device.getCategoryID());
     }
