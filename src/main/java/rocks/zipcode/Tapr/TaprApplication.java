@@ -43,7 +43,7 @@ public class TaprApplication {
 			// fetch users by username
 			log.info("User found with findByUsername('KDot234'):");
 			log.info("--------------------------------------------");
-			repository.findByUsername("KDot234").forEach(KDot234 -> {
+			repository.findByUserName("KDot234").forEach(KDot234 -> {
 				log.info(KDot234.toString());
 			});
 			log.info("");
@@ -75,7 +75,7 @@ public class TaprApplication {
 			// fetch users by phone number
 			log.info("User found with findByPhoneNumber('302-763-3333'):");
 			log.info("--------------------------------------------");
-			repository.findByPhoneNumber("302-763-3333").forEach(Kris -> {
+			repository.findByPhoneNumber(302 - 763 - 3333).forEach(Kris -> {
 				log.info("302-763-3333".toString());
 			});
 			log.info("");

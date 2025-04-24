@@ -1,24 +1,36 @@
 package rocks.zipcode.Tapr.User;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import rocks.zipcode.Tapr.Devices.Device;
 
 import java.util.ArrayList;
 
 @Entity
+@Table(name = "Users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID", nullable = false, unique = true)
     private int ID;
+
+    @Column(name = "User name", nullable = false, length = 30)
     private String userName;
+
+    @Column(name = "First name", nullable = false, length = 30)
     private String firstName;
+
+    @Column(name = "Last name", nullable = false, length = 30)
     private String lastName;
+
+    @Column(name = "E-mail", nullable = false, length = 50)
     private String email;
+
+    @Column(name = "Password", nullable = false, length = 30)
     private String password;
+
+    @Column(name = "Phone Number", nullable = true, length = 15)
     private int phoneNumber;
 
     public User() {

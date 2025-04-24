@@ -1,13 +1,35 @@
 package rocks.zipcode.Tapr.Devices;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Devices")
 public class Device {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID", nullable = false, unique = true)
     private int ID;
+
+    @Column(name = "Brand Name", nullable = false, length = 30)
     private String brandName;
+
+    @Column(name = "Model Name", nullable = true, length = 30)
     private String modelName;
+
+    @Column(name = "Model Number", nullable = false, length = 30)
     private String modelNumber;
+
+    @Column(name = "Color", nullable = true, length = 30)
     private String color;
+
+    @Column(name = "Category Name", nullable = false, length = 30)
     private String categoryName;
+
+    @Column(name = "UPC", nullable = true, length = 30)
     private String UPC;
+
+    @Column(name = "Year Manufactured", nullable = true)
     private int yearManufactured;
 
 
