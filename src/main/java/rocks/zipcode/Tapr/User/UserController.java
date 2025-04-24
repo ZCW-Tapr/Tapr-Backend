@@ -12,4 +12,19 @@ public class UserController {
     public String greeting() {
         return "Hello and welcome to TAPR!";
     }
+
+    @GetMapping("/put")
+    public String put() {
+        return "Updated User";
+    }
+    @GetMapping("/post")
+    public String post() {
+        return "Added User";
+    }
+
+    @GetMapping("/delete")
+    public String delete() {
+        return "Deleted User";
+    }
+
 }
