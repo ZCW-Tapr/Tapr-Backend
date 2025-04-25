@@ -1,9 +1,11 @@
-package rocks.zipcode.Tapr.User;
+package rocks.zipcode.Tapr.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+import rocks.zipcode.Tapr.User.User;
+import rocks.zipcode.Tapr.User.UserRepository;
 
 @RestController
 @RequestMapping
@@ -26,7 +28,7 @@ public class UserController {
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addUser")
     public ResponseEntity<User> createUser(@RequestBody User u){
         return new ResponseEntity<>(userRepository.save(u), HttpStatus.CREATED);
     }

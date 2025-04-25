@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Devices")
-public class Device {
+public class Devices {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,13 +14,13 @@ public class Device {
     @Column(name = "Brand Name", nullable = false, length = 30)
     private String brandName;
 
-    @Column(name = "Model Name", nullable = true, length = 30)
+    @Column(name = "Model Name", nullable = false, length = 30)
     private String modelName;
 
     @Column(name = "Model Number", nullable = false, length = 30)
     private String modelNumber;
 
-    @Column(name = "Color", nullable = true, length = 30)
+    @Column(name = "Color", nullable = false, length = 30)
     private String color;
 
     @Column(name = "Category Name", nullable = false, length = 30)
@@ -29,14 +29,11 @@ public class Device {
     @Column(name = "UPC", nullable = true, length = 30)
     private String UPC;
 
-    @Column(name = "Year Manufactured", nullable = true)
+    @Column(name = "Year Manufactured", nullable = false)
     private int yearManufactured;
 
 
-
-    private String location;
-
-    public Device(int ID, String brandName, String modelName, String modelNumber, String color, String categoryName, String UPC, int yearManufactured) {
+    public Devices(int ID, String brandName, String modelName, String modelNumber, String color, String categoryName, String UPC, int yearManufactured) {
         this.ID = ID;
         this.brandName = brandName;
         this.modelName = modelName;
@@ -47,7 +44,7 @@ public class Device {
         this.yearManufactured = yearManufactured;
     }
 
-    public Device() {
+    public Devices() {
         // Default constructor
     }
 
@@ -113,13 +110,5 @@ public class Device {
 
     public void setYearManufactured(int yearManufactured) {
         this.yearManufactured = yearManufactured;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 }

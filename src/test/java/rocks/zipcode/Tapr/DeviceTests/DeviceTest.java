@@ -1,73 +1,73 @@
 package rocks.zipcode.Tapr.DeviceTests;
 import org.junit.jupiter.api.Test;
-import rocks.zipcode.Tapr.Devices.Device;
+import rocks.zipcode.Tapr.Devices.Devices;
 
 import static org.testng.AssertJUnit.assertEquals;
 
 public class DeviceTest {
-    Device device = new Device();
+    Devices devices = new Devices();
 
     @Test
     public void getID() {
         //given
         int ID = 1;
-        device.setID(ID);
-        assertEquals(ID, device.getID());
+        devices.setID(ID);
+        assertEquals(ID, devices.getID());
     }
 
     @Test
     void getBrandName() {
         //given
         String brandName = "Samsung";
-        device.setBrandName(brandName);
-        assertEquals(brandName, device.getBrandName());
+        devices.setBrandName(brandName);
+        assertEquals(brandName, devices.getBrandName());
     }
 
     @Test
     void getModelName() {
         //given
         String modelName = "Samsung - 70” Class DU7200 Series Crystal UHD 4K Smart Tizen TV";
-        device.setModelName(modelName);
-        assertEquals(modelName, device.getModelName());
+        devices.setModelName(modelName);
+        assertEquals(modelName, devices.getModelName());
     }
 
     @Test
     void getModelNumber() {
         //given
         String modelNumber = "UN70DU7200FXZA";
-        device.setModelNumber(modelNumber);
-        assertEquals(modelNumber, device.getModelNumber());
+        devices.setModelNumber(modelNumber);
+        assertEquals(modelNumber, devices.getModelNumber());
     }
 
     @Test
     void getColor() {
         //given
         String color = "Black";
-        device.setColor(color);
-        assertEquals(color, device.getColor());
+        devices.setColor(color);
+        assertEquals(color, devices.getColor());
     }
 
     @Test
     public void getCategoryName() {
         //given
         String categoryName = "Television";
-        device.setCategoryName(categoryName);
-        assertEquals(categoryName, device.getCategoryName());
+        devices.setCategoryName(categoryName);
+        assertEquals(categoryName, devices.getCategoryName());
     }
 
     @Test
     void getUPC() {
         //given
         String UPC = "887276830803";
-        device.setUPC(UPC);
-        assertEquals(UPC, device.getUPC());
+        devices.setUPC(UPC);
+        assertEquals(UPC, devices.getUPC());
     }
 
     @Test
     void getYearManufactured() {
         //given
         int yearManufactured = 2025;
-        device.setYearManufactured(yearManufactured);
-        assertEquals(yearManufactured, device.getYearManufactured());
+        devices.setYearManufactured(yearManufactured);
+        assertEquals(yearManufactured, devices.getYearManufactured());
     }
 }
