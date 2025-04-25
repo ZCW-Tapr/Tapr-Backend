@@ -31,13 +31,13 @@ public class User {
     private String password;
 
     @Column(name = "Phone Number", nullable = true, length = 15)
-    private int phoneNumber;
+    private String phoneNumber;
 
     public User() {
         // Default constructor
     }
 
-    public User(int ID, String userName, String email, String firstName, String lastName, String password, int phoneNumber) {
+    public User(int ID, String userName, String email, String firstName, String lastName, String password, String phoneNumber) {
         this.ID = ID;
         this.userName = userName;
         this.firstName = firstName;
@@ -47,12 +47,12 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "User [ID=%d, User Name=%s, E-mail=%s, First Name=%s, Last Name=%s, Password=%s, Phone=%d, Devices On Profile=%s]",
-                ID, userName, email, firstName, lastName, password, phoneNumber);
-    }
+//    @Override
+//    public String toString() {
+//        return String.format(
+//                "User [ID=%d, User Name=%s, E-mail=%s, First Name=%s, Last Name=%s, Password=%s, Phone=%d, Devices On Profile=%s]",
+//                ID, userName, email, firstName, lastName, password, phoneNumber);
+//    }
 
     public int getID() {
         return ID;
@@ -102,11 +102,11 @@ public class User {
         this.password = password;
     }
 
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }
