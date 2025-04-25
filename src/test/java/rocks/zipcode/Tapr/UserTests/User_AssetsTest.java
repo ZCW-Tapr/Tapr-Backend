@@ -1,7 +1,7 @@
 package rocks.zipcode.Tapr.UserTests;
 
 import org.junit.jupiter.api.Test;
-import rocks.zipcode.Tapr.User.User_Assets;
+import rocks.zipcode.Tapr.User_Assets.User_Assets;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package rocks.zipcode.Tapr.User;
+package rocks.zipcode.Tapr.User_Assets;
 
 import jakarta.persistence.*;
 
@@ -9,25 +9,22 @@ import java.util.Date;
 public class User_Assets {
 
     @Id
-    @GeneratedValue
-    @Column(name = "ID", nullable = false, unique = true)
-    private int UserID;
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Device ID", nullable = false)
     private int DeviceID;
 
-    @Column(name = "Date of Service", nullable = true)
-    private Date dateOfService;
+    @Column(name = "Date of Service", nullable = false, length = 30)
+    private String dateOfService;
 
-    @Column(name = "Location Name", nullable = true, length = 30)
+    @Column(name = "Location Name", nullable = false, length = 30)
     private String locationName;
 
-    @Column(name = "Serial Number", nullable = true)
-    private int serialNumber;
+    @Column(name = "Serial Number", nullable = false, length = 30)
+    private String serialNumber;
 
-    public User_Assets(int userID, int deviceID, Date dateOfService, String locationName, int serialNumber) {
-        UserID = userID;
-        DeviceID = deviceID;
+    public User_Assets(int deviceID, String dateOfService, String locationName, String serialNumber) {
+        //UserID = userID;
+        this.DeviceID = deviceID;
         this.dateOfService = dateOfService;
         this.locationName = locationName;
         this.serialNumber = serialNumber;
@@ -37,13 +34,13 @@ public class User_Assets {
         // Default constructor
     }
 
-    public int getUserID() {
-        return UserID;
-    }
+//    public int getUserID() {
+//        return UserID;
+//    }
 
-    public void setUserID(int userID) {
-        UserID = userID;
-    }
+//    public void setUserID(int userID) {
+//        UserID = userID;
+//    }
 
     public int getDeviceID() {
         return DeviceID;
@@ -53,11 +50,11 @@ public class User_Assets {
         DeviceID = deviceID;
     }
 
-    public Date getDateOfService() {
+    public String getDateOfService() {
         return dateOfService;
     }
 
-    public void setDateOfService(Date dateOfService) {
+    public void setDateOfService(String dateOfService) {
         this.dateOfService = dateOfService;
     }
 
@@ -69,11 +66,11 @@ public class User_Assets {
         this.locationName = locationName;
     }
 
-    public int getSerialNumber() {
+    public String getSerialNumber() {
         return serialNumber;
     }
 
-    public void setSerialNumber(int serialNumber) {
+    public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
 }

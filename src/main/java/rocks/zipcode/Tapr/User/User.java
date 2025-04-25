@@ -2,10 +2,6 @@ package rocks.zipcode.Tapr.User;
 
 import jakarta.persistence.*;
 
-import rocks.zipcode.Tapr.Devices.Device;
-
-import java.util.ArrayList;
-
 @Entity
 @Table(name = "Users")
 public class User {
