@@ -20,7 +20,7 @@ public class DevicesController {
         return new ResponseEntity<>(devices, HttpStatus.CREATED);
     }
 
-    @GetMapping("/devices")
+    @GetMapping("/allDevices")
     public ResponseEntity <Iterable <Devices>> getAllDevices(){
         return new ResponseEntity<>(devicesRepository.findAll(), HttpStatus.OK);
     }

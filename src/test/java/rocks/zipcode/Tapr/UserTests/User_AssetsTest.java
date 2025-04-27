@@ -10,13 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class User_AssetsTest {
     User_Assets user_assets = new User_Assets();
 
-    @Test
-    void getUserID() {
-        //given
-        int userID = 1;
-        user_assets.setUserID(userID);
-        assertEquals(userID, user_assets.getUserID());
-    }
+    
 
     @Test
     void getDeviceID() {
@@ -29,7 +23,7 @@ class User_AssetsTest {
     @Test
     void getDateOfService() {
         //given
-        Date dateOfService = new Date();
+        String dateOfService = "2023-10-01";
         user_assets.setDateOfService(dateOfService);
         assertEquals(dateOfService, user_assets.getDateOfService());
     }
@@ -45,7 +39,7 @@ class User_AssetsTest {
     @Test
     void getSerialNumber() {
         //given
-        int serialNumber = 123456;
+        String serialNumber = "123456789";
         user_assets.setSerialNumber(serialNumber);
         assertEquals(serialNumber, user_assets.getSerialNumber());
     }

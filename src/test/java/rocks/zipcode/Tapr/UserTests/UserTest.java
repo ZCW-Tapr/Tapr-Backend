@@ -54,7 +54,7 @@ public class UserTest  {
 
     @Test
     public void testGetPhone() {
-        int phone = 302-774-7890;
+        String phone = "302-774-7890";
         user.setPhoneNumber(phone);
         assertEquals(phone, user.getPhoneNumber());
     }
