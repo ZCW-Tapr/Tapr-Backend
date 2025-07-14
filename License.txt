@@ -1,0 +1,16 @@
+Tapr License – CC BY-NC 4.0
+
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. Credit should be attributed as: "Created by Gabriel [Your Last Name]"
+- NonCommercial — You may not use the material for commercial purposes.
+- No Additional Restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+This license does not cover any proprietary business logic, gesture orchestration mechanisms, or architectural patterns withheld from this repository. These components are reserved for private development and distribution only.
+
+Full license text: https://creativecommons.org/licenses/by-nc/4.0/legalcode

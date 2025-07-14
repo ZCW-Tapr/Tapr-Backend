@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>rocks.zipcode</groupId>
-	<artifactId>Tapr</artifactId>
+	<artifactId>Tapr-Framework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Tapr</name>
 	<description>Tapr project for Spring Boot</description>
