@@ -1,5 +1,6 @@
 package rocks.zipcode.Tapr.Controllers;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -33,14 +34,10 @@ public class DevicesController {
     @PutMapping("/put/devices/{id}")
     public ResponseEntity<Devices> updateDevices(@RequestBody Devices d, @PathVariable int id){
         Devices devices = devicesRepository.findById(id).orElse(null);
-        devices.setBrandName(d.getBrandName());
-        devices.setModelName(d.getModelName());
-        devices.setModelNumber(d.getModelNumber());
-        devices.setColor(d.getColor());
-        devices.setCategoryName(d.getCategoryName());
-        devices.setID(d.getID());
-        devices.setUPC(d.getUPC());
-        devices.setYearManufactured(d.getYearManufactured());
+        if (devices == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        BeanUtils.copyProperties(d, devices);
         return new ResponseEntity<>(devicesRepository.save(devices), HttpStatus.OK);
     }
 
@@ -53,3 +50,16 @@ public class DevicesController {
         return new ResponseEntity<>(devices, HttpStatus.OK);
     }
 }
+
+/*  Suggested Enhancements (For Later)
+- Null Safety Check in updateDevices()
+Before calling setXXX() methods, confirm the device was found:
+
+if (devices == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+- Refactor PUT Logic
+Consider using BeanUtils to copy properties or implementing a service layer for cleanliness
+
+- Consistent HTTP Status Codes
+For /devices/{id} retrieval, 200 OK might be more conventional than 201 CREATED
+* */

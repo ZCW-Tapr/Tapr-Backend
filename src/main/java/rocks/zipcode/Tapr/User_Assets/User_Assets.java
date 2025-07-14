@@ -1,58 +1,76 @@
 package rocks.zipcode.Tapr.User_Assets;
 
 import jakarta.persistence.*;
+import rocks.zipcode.Tapr.Devices.Devices;
+import rocks.zipcode.Tapr.User.User;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "User Assets")
+@Table(name = "user_assets")
 public class User_Assets {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Device ID", nullable = false)
-    private int DeviceID;
+    private int assetId;
 
-    @Column(name = "Date of Service", nullable = false, length = 30)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "device_id")
+    private Devices device;
+
+    @Column(name = "date_of_service", nullable = false, length = 30)
     private String dateOfService;
 
-    @Column(name = "Location Name", nullable = false, length = 30)
+    @Column(name = "location_name", nullable = false, length = 30)
     private String locationName;
 
-    @Column(name = "Serial Number", nullable = false, length = 30)
+    @Column(name = "serial_number", nullable = false, length = 30)
     private String serialNumber;
 
-    public User_Assets(int deviceID, String dateOfService, String locationName, String serialNumber) {
-        //UserID = userID;
-        this.DeviceID = deviceID;
+    public User_Assets() {
+        // Default constructor
+    }
+    public User_Assets(User user,  Devices device, String dateOfService, String locationName, String serialNumber) {
+        this.user = user;
+        this.device = device;
         this.dateOfService = dateOfService;
         this.locationName = locationName;
         this.serialNumber = serialNumber;
     }
 
-    public User_Assets() {
-        // Default constructor
+    public int getAssetId(){
+        return assetId;
     }
 
-//    public int getUserID() {
-//        return UserID;
-//    }
-
-//    public void setUserID(int userID) {
-//        UserID = userID;
-//    }
-
-    public int getDeviceID() {
-        return DeviceID;
+    public void setAssetId(int assetId){
+        this.assetId = assetId;
     }
 
-    public void setDeviceID(int deviceID) {
-        DeviceID = deviceID;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Devices getDevice() {
+        return device;
+    }
+
+    public void setDevice(Devices device) {
+        this.device = device;
     }
 
     public String getDateOfService() {
         return dateOfService;
     }
+
+
 
     public void setDateOfService(String dateOfService) {
         this.dateOfService = dateOfService;
@@ -74,3 +92,16 @@ public class User_Assets {
         this.serialNumber = serialNumber;
     }
 }
+
+/* Suggestions for Strengthening
+
+- 🧼 Consider renaming "User Assets" table to user_assets or user_assets_table—spaces in table names can cause headaches in MySQL and SQL joins later.
+- 💡 Introduce foreign key relationships soon:
+@ManyToOne
+@JoinColumn(name = "user_id")
+private User user;
+- This will let you directly link assets to user profiles and simplify gesture mapping per user.
+- 📆 If dateOfService might use actual date logic later, swap from String to LocalDate or Date (you’ve already imported java.util.Date!).
+*/
+
+//Done

@@ -36,6 +36,7 @@ public class UserController {
     @PutMapping("/put/user/{id}")
     public ResponseEntity<User> updateUser(@RequestBody User u, @PathVariable int id){
         User user = userRepository.findById(id).orElse(null);
+        assert user != null;
         user.setUserName(u.getUserName());
         user.setFirstName(u.getFirstName());
         user.setLastName(u.getLastName());
@@ -54,3 +55,17 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }
+
+/*🔧 Suggestions for Refinement
+- Null Safety for Updates
+Consider guarding against null before calling setters in updateUser():
+
+if (user == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+- Status Code Semantics
+A GET call returning 201 CREATED (like in /getUser/{id}) might be better served
+ with 200 OK unless a resource is actually being created.
+- Password Handling
+If you're planning to expand into authentication later, consider encrypting passwords
+ (e.g., using BCrypt) before persisting.
+*/

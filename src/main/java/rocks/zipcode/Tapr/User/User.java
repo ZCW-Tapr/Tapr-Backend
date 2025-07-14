@@ -11,22 +11,22 @@ public class User {
     @Column(name = "ID", nullable = false, unique = true)
     private int ID;
 
-    @Column(name = "User name", nullable = false, length = 30)
+    @Column(name = "user_name", nullable = false, length = 30)
     private String userName;
 
-    @Column(name = "First name", nullable = false, length = 30)
+    @Column(name = "first_name", nullable = false, length = 30)
     private String firstName;
 
-    @Column(name = "Last name", nullable = false, length = 30)
+    @Column(name = "last_name", nullable = false, length = 30)
     private String lastName;
 
-    @Column(name = "E-mail", nullable = false, length = 50)
+    @Column(name = "e-mail", nullable = false, length = 50)
     private String email;
 
-    @Column(name = "Password", nullable = false, length = 30)
+    @Column(name = "password", nullable = false, length = 30)
     private String password;
 
-    @Column(name = "Phone Number", nullable = true, length = 15)
+    @Column(name = "phone_number", nullable = true, length = 15)
     private String phoneNumber;
 
     public User() {
@@ -106,3 +106,13 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 }
+
+/*
+Minor Suggestions for Later
+- Field Naming Consistency: Column names like "User name" or
+"First name" have spaces, which might complicate MySQL queries later. A cleaner approach:
+@Column(name = "user_name") - Done
+
+- Password Security: If you move toward authentication,
+you’ll want to hash the password using BCryptPasswordEncoder before saving it.
+*/

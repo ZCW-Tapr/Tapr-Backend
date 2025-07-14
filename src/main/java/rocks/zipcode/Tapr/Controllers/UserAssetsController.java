@@ -4,15 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+import rocks.zipcode.Tapr.Service.UserAssetsService;
 import rocks.zipcode.Tapr.User_Assets.User_Assets;
 import rocks.zipcode.Tapr.User_Assets.User_AssetsRepository;
 
 @RestController
 @RequestMapping
-public class User_AssetsController {
+public class UserAssetsController {
 
     @Autowired
     private User_AssetsRepository user_AssetsRepository;
+    private UserAssetsService userAssetsService;
 //    private List<User> userList = new ArrayList<>();
     // private AtomicInteger idCounter = new AtomicInteger();
 
@@ -30,17 +32,12 @@ public class User_AssetsController {
 
     @PostMapping("/addAssets")
     public ResponseEntity<User_Assets> createAsset(@RequestBody User_Assets a){
-        return new ResponseEntity<>(user_AssetsRepository.save(a), HttpStatus.CREATED);
+        return new ResponseEntity<>(userAssetsService.saveAsset(a), HttpStatus.CREATED);
     }
 
     @PutMapping("/put/userAssets/{id}")
-    public ResponseEntity<User_Assets> updateAsset(@RequestBody User_Assets a, @PathVariable int id){
-        User_Assets userAssets = user_AssetsRepository.findById(id).orElse(null);
-        userAssets.setDeviceID(a.getDeviceID());
-        userAssets.setDateOfService(a.getDateOfService());
-        userAssets.setLocationName(a.getLocationName());
-        userAssets.setSerialNumber(a.getSerialNumber());
-        return new ResponseEntity<>(user_AssetsRepository.save(userAssets), HttpStatus.OK);
+    public ResponseEntity<User_Assets> updateAsset(@RequestBody User_Assets data, @PathVariable int id){
+        return new ResponseEntity<>(userAssetsService.updateAsset(id, data), HttpStatus.OK);
     }
 
     @DeleteMapping("/deleteAssets/{id}")
@@ -53,3 +50,18 @@ public class User_AssetsController {
     }
 }
 
+/* Suggestions for Hardening
+1. Null Checks for Safety
+Before setting attributes in updateAsset():
+if (userAssets == null) {
+    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+}
+
+
+This prevents NullPointerException if the ID isn’t found.
+2. Consider Validation Annotations
+As this evolves, adding @Valid to request bodies and field-level validation annotations (like @NotNull, @Size) in your model can catch issues early.
+3. Refactor for Reusability
+Later on, if you introduce gesture-to-action mappings as a feature, you might want to create a service layer where User_Assets can be grouped or queried based on usage patterns (e.g. common gestures, zones, or rooms).
+
+* */

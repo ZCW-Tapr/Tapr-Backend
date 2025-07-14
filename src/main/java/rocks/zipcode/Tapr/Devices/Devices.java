@@ -11,25 +11,25 @@ public class Devices {
     @Column(name = "ID", nullable = false, unique = true)
     private int ID;
 
-    @Column(name = "Brand Name", nullable = false, length = 30)
+    @Column(name = "brand_name", nullable = false, length = 30)
     private String brandName;
 
-    @Column(name = "Model Name", nullable = false, length = 30)
+    @Column(name = "model_name", nullable = false, length = 30)
     private String modelName;
 
-    @Column(name = "Model Number", nullable = false, length = 30)
+    @Column(name = "model_number", nullable = false, length = 30)
     private String modelNumber;
 
-    @Column(name = "Color", nullable = false, length = 30)
+    @Column(name = "color", nullable = false, length = 30)
     private String color;
 
-    @Column(name = "Category Name", nullable = false, length = 30)
+    @Column(name = "category_name", nullable = false, length = 30)
     private String categoryName;
 
     @Column(name = "UPC", nullable = true, length = 30)
     private String UPC;
 
-    @Column(name = "Year Manufactured", nullable = false)
+    @Column(name = "year_manufactured", nullable = false)
     private int yearManufactured;
 
 
