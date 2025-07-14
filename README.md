@@ -1,4 +1,10 @@
-> Created and maintained by Gabriel Cruz
+# Tapr: Gesture-Driven Smart Device Orchestration
+
+Tapr is a contextual automation framework built for intuitive smart home control using gesture recognition and device mapping. With modular backend architecture and scalable entity relationships, Tapr serves as a foundation for responsive user-device ecosystems.
+
+Note: Proprietary gesture orchestration logic and behavioral mapping models are reserved for private development and are not disclosed in this repository.
+
+> Created and maintained by Gabriel Cruz.
 > For demo access or proposal inquiries, contact: LinkedIn.com/GabrielC67
 
 ## Purpose
@@ -11,12 +17,6 @@ The full gesture orchestration logic is under development and will be released i
 
 ## License
 This work is licensed under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)].
-
-# Tapr: Gesture-Driven Smart Device Orchestration
-
-Tapr is a contextual automation framework built for intuitive smart home control using gesture recognition and device mapping. With modular backend architecture and scalable entity relationships, Tapr serves as a foundation for responsive user-device ecosystems.
-
-> Note: Proprietary gesture orchestration logic and behavioral mapping models are reserved for private development and are not disclosed in this repository.
 
 ---
 
