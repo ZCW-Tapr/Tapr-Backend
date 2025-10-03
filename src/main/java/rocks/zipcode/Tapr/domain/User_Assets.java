@@ -8,8 +8,8 @@ public class User_Assets {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "DEVICE_ID")
-    private int userDeviceId;
+    @Column(name = "ASSET_ID")
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "user_id")
@@ -39,12 +39,12 @@ public class User_Assets {
         this.serialNumber = serialNumber;
     }
 
-    public int getAssetId(){
-        return userDeviceId;
+    public Long getAssetId(){
+        return id;
     }
 
-    public void setAssetId(int assetId){
-        this.userDeviceId = assetId;
+    public void setAssetId(Long assetId){
+        this.id = assetId;
     }
 
     public User getUser() {

@@ -1,7 +1,5 @@
-package rocks.zipcode.Tapr.UserTests;
+package rocks.zipcode.Tapr.domain;
 import org.junit.jupiter.api.Test;
-
-import rocks.zipcode.Tapr.domain.User;
 
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -11,7 +9,7 @@ public class UserTest  {
     @Test
     public void testGetID() {
         //given
-        int ID = 1;
+        Long ID = 1L;
         user.setID(ID);
         assertEquals(ID, user.getID());
     }

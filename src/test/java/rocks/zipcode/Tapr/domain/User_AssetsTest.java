@@ -1,7 +1,6 @@
-package rocks.zipcode.Tapr.UserTests;
+package rocks.zipcode.Tapr.domain;
 
 import org.junit.jupiter.api.Test;
-import rocks.zipcode.Tapr.domain.User_Assets;
 
 import static org.junit.jupiter.api.Assertions.*;
 

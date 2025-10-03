@@ -8,8 +8,8 @@ public class Devices {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID", nullable = false, unique = true)
-    private int id;
+    @Column(name = "DEVICE_ID")
+    private Long id;
 
 //    @Column(name = "brand_name", nullable = false, length = 30)
     private String brandName;
@@ -47,11 +47,11 @@ public class Devices {
         // Default constructor
     }
 
-    public int getID() {
+    public Long getID() {
         return id;
     }
 
-    public void setID(int id) {
+    public void setID(Long id) {
         this.id = id;
     }
 

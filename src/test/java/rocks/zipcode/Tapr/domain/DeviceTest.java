@@ -1,6 +1,5 @@
-package rocks.zipcode.Tapr.DeviceTests;
+package rocks.zipcode.Tapr.domain;
 import org.junit.jupiter.api.Test;
-import rocks.zipcode.Tapr.domain.Devices;
 
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -10,7 +9,7 @@ public class DeviceTest {
     @Test
     public void getID() {
         //given
-        int ID = 1;
+        Long ID = 1L;
         devices.setID(ID);
         assertEquals(ID, devices.getID());
     }
