@@ -1,7 +1,7 @@
 package rocks.zipcode.Tapr.UserTests;
 import org.junit.jupiter.api.Test;
 
-import rocks.zipcode.Tapr.User.User;
+import rocks.zipcode.Tapr.domain.User;
 
 import static org.testng.AssertJUnit.assertEquals;
 

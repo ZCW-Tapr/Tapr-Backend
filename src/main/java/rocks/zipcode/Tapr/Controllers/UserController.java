@@ -1,11 +1,11 @@
-package rocks.zipcode.Tapr.Controllers;
+package rocks.zipcode.Tapr.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
-import rocks.zipcode.Tapr.User.User;
-import rocks.zipcode.Tapr.User.UserRepository;
+import rocks.zipcode.Tapr.domain.User;
+import rocks.zipcode.Tapr.repository.UserRepository;
 
 @RestController
 @RequestMapping

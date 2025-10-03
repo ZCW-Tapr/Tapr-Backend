@@ -1,6 +1,6 @@
 package rocks.zipcode.Tapr.DeviceTests;
 import org.junit.jupiter.api.Test;
-import rocks.zipcode.Tapr.Devices.Devices;
+import rocks.zipcode.Tapr.domain.Devices;
 
 import static org.testng.AssertJUnit.assertEquals;
 
