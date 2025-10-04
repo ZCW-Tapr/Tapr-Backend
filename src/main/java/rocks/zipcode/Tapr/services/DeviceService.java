@@ -12,9 +12,9 @@ public class DeviceService {
     @Autowired
     private DevicesRepository devicesRepository;
 
-//    public Devices updateDevice(int id, Devices newData) {
-//        Devices existingDevice = devicesRepository.findById(id).orElseThrow(() -> new RuntimeException("Device not found"));
-//        BeanUtils.copyProperties(newData, existingDevice);
-//        return devicesRepository.save(existingDevice);
-//    }
+    public Devices updateDevice(Long id, Devices newData) {
+        Devices existingDevice = devicesRepository.findById(id).orElseThrow(() -> new RuntimeException("Device not found"));
+        BeanUtils.copyProperties(newData, existingDevice);
+        return devicesRepository.save(existingDevice);
+    }
 }

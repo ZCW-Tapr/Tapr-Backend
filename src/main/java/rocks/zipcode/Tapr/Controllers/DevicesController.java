@@ -12,11 +12,13 @@ import rocks.zipcode.Tapr.repository.DevicesRepository;
 @RequestMapping
 public class DevicesController {
 
+
+
     @Autowired
     private DevicesRepository devicesRepository;
 
     @GetMapping("/devices/{id}")
-    public ResponseEntity<Devices> getDevicesByID(@PathVariable int id){
+    public ResponseEntity<Devices> getDevicesByID(@PathVariable Long id){
         Devices devices = devicesRepository.findById(id).orElse(null);
         return new ResponseEntity<>(devices, HttpStatus.CREATED);
     }
@@ -32,7 +34,7 @@ public class DevicesController {
     }
 
     @PutMapping("/put/devices/{id}")
-    public ResponseEntity<Devices> updateDevices(@RequestBody Devices d, @PathVariable int id){
+    public ResponseEntity<Devices> updateDevices(@RequestBody Devices d, @PathVariable Long id){
         Devices devices = devicesRepository.findById(id).orElse(null);
         if (devices == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -42,7 +44,7 @@ public class DevicesController {
     }
 
     @DeleteMapping("/deleteDevices/{id}")
-    public ResponseEntity<Devices> deleteDevices(@PathVariable int id){
+    public ResponseEntity<Devices> deleteDevices(@PathVariable Long id){
         Devices devices = devicesRepository.findById(id).orElse(null);
         if (devices != null) {
             devicesRepository.delete(devices);

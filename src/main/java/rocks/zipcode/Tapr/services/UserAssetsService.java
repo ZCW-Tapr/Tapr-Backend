@@ -10,17 +10,16 @@ import rocks.zipcode.Tapr.repository.User_AssetsRepository;
 public class UserAssetsService {
 
     @Autowired
-    private User_AssetsRepository assetsRepo;
+    private User_AssetsRepository userAssetsRepository;
 
-//    public User_Assets updateAsset(int id, User_Assets newData){
-//        User_Assets existingAsset = assetsRepo.findById(id)
-//                .orElseThrow(() -> new RuntimeException("Device not found"));
-//        BeanUtils.copyProperties(newData, existingAsset);
-//        return assetsRepo.save(existingAsset);
-//    }
-//
-//    public User_Assets saveAsset(User_Assets a) {
-//        // Ensure referenced user/device exist if needed
-//        return assetsRepo.save(a);
-//    }
+    public User_Assets updateAsset(Long id, User_Assets newData){
+        User_Assets existingAsset = userAssetsRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Device not found"));
+        BeanUtils.copyProperties(newData, existingAsset);
+        return userAssetsRepository.save(existingAsset);
+    }
+
+    public User_Assets saveAsset(User_Assets a) {
+        return userAssetsRepository.save(a);
+    }
 }

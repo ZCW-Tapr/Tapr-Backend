@@ -20,7 +20,7 @@ public class UserAssetsController {
 
 
     @GetMapping("/assets/{id}")
-    public ResponseEntity<User_Assets> getUserAssetByID(@PathVariable int id){
+    public ResponseEntity<User_Assets> getUserAssetByID(@PathVariable Long id){
         User_Assets userAssets = user_AssetsRepository.findById(id).orElse(null);
         return new ResponseEntity<>(userAssets, HttpStatus.CREATED);
     }
@@ -31,17 +31,17 @@ public class UserAssetsController {
     }
 
     @PostMapping("/addAssets")
-    public ResponseEntity<User_Assets> createAsset(@RequestBody User_Assets a){
-        return new ResponseEntity<>(userAssetsService.saveAsset(a), HttpStatus.CREATED);
+    public ResponseEntity<User_Assets> createAsset(@RequestBody User_Assets userAssets){
+        return new ResponseEntity<>(userAssetsService.saveAsset(userAssets), HttpStatus.CREATED);
     }
 
     @PutMapping("/put/userAssets/{id}")
-    public ResponseEntity<User_Assets> updateAsset(@RequestBody User_Assets data, @PathVariable int id){
+    public ResponseEntity<User_Assets> updateAsset(@RequestBody User_Assets data, @PathVariable Long id){
         return new ResponseEntity<>(userAssetsService.updateAsset(id, data), HttpStatus.OK);
     }
 
     @DeleteMapping("/deleteAssets/{id}")
-    public ResponseEntity<User_Assets> deleteAsset(@PathVariable int id){
+    public ResponseEntity<User_Assets> deleteAsset(@PathVariable Long id){
         User_Assets user_assets = user_AssetsRepository.findById(id).orElse(null);
         if (user_assets != null) {
             user_AssetsRepository.delete(user_assets);
