@@ -12,7 +12,7 @@ import rocks.zipcode.Tapr.repository.DevicesRepository;
 @RequestMapping
 public class DevicesController {
 
-    private Long test;
+    private int test;
 
     @Autowired
     private DevicesRepository devicesRepository;
